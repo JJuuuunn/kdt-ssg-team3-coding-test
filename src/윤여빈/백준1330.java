@@ -5,12 +5,15 @@ import java.util.Scanner;
 public class 백준1330 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int n = sc.nextInt();
-        int a = 0;
-        for (int i = 1; i <= n; i++) {
-            a += i;
+        int a = sc.nextInt();
+        int b = sc.nextInt();
+        if (a > b){
+            System.out.println(">");
+        }else if (a < b){
+            System.out.println("<");
+        } else if (a == b) {
+            System.out.println("==");
 
         }
-        System.out.println(a);
     }
 }
