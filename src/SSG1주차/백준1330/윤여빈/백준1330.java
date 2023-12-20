@@ -15,5 +15,7 @@ public class 백준1330 {
             System.out.println("==");
 
         }
+        String c = (a>b?">":(a<b?"<":"=="));
+        System.out.println(c);
     }
 }
