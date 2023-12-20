@@ -22,4 +22,4 @@ public class 백준2501 {
         System.out.println(result);
     }
     }
-}
+
