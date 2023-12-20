@@ -1,33 +1,36 @@
 package SSG2주차.백준2941.조정우;
 
+import java.util.List;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        final String[] alphabets = {
+        final List<String> listAlphabets = List.of(
+                "dz=",
                 "c=",
                 "c-",
-                "dz=",
                 "d-",
                 "lj",
                 "nj",
                 "s=",
                 "z="
-        };
-        final int lenAlphabets = alphabets.length;
+        );
         String stringRaw = sc.nextLine();
-        int counterAnswer = 0;
-        for (int idxAlphabets = 0; idxAlphabets < lenAlphabets; idxAlphabets++) {
-            String alphabetCurrent = alphabets[idxAlphabets];
-            if (stringRaw.contains(alphabetCurrent)) {
-                counterAnswer++;
+        int counterMatched = 0;
+        for (String alphabetCurrent : listAlphabets) {
+            while (true) {
+                int lenStringPrevReplaced = stringRaw.length();
+                stringRaw = stringRaw.replaceFirst(alphabetCurrent, "A");
+                if (stringRaw.length() != lenStringPrevReplaced) {
+                    counterMatched++;
+                } else {
+                    break;
+                }
             }
         }
-        for (int idxAlphabets = 0; idxAlphabets < lenAlphabets; idxAlphabets++) {
-            stringRaw = stringRaw.replace(alphabets[idxAlphabets], "");
-        }
-        System.out.print(counterAnswer + stringRaw.length());
+        stringRaw = stringRaw.replaceAll("A", "");
+        System.out.print(counterMatched + stringRaw.length());
         sc.close();
     }
 }
