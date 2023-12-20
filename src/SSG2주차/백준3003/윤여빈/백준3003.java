@@ -1,4 +1,4 @@
-package 윤여빈;
+package SSG2주차.백준3003.윤여빈;
 
 import java.util.Scanner;
 
