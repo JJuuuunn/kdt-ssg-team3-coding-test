@@ -1,4 +1,18 @@
 package SSG2주차.백준2501.김소진;
 
+import java.util.Scanner;
+
 public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int N = sc.nextInt();
+        int[] result = new int[N];
+        int K = sc.nextInt();
+        for (int i = 1; i <= N; i++) {
+            if (N % i == 0) {
+                result[i - 1] = i;
+            }
+        }
+        System.out.println(result[K - 1]);
+    }
 }
