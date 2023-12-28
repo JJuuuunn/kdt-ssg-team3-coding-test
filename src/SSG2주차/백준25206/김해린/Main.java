@@ -9,13 +9,15 @@ public class Main {
         float[] grade = new float[20]; //길이가 20인 학점 배열
         String[] degree = new String[20]; //길이가 20인 등급 배열
         float gradeTotal = 0.0f; //학점의 총합을 저장해줄 변수
-        float GPA = 0.0f; //결과값이 전공평점을 저장해줄 변수
+        float GPA = 0.0f; //결과값인 전공평점을 저장해줄 변수
 
 
-        for(int i = 0; i < 20; i++) {
+        for(int i = 0; i < grade.length; i++) {
             String subInfo = in.nextLine(); //문자열 한줄씩 입력 받음
 
-            String[] splitSubInfo = subInfo.split(" "); //한줄로 입력받은 문자열을 띄어쓰기를 기준으로 자른 후 문자열 배열에 넣어줌
+            String[] splitSubInfo = subInfo.split(" ");
+
+            //한줄로 입력받은 문자열을 띄어쓰기를 기준으로 자른 후 문자열 배열에 넣어줌
             //ex) Database 3.0 C+ ---> splitSubInfo[1] => 3.0, splitSubInfo[2] => C+
 
             grade[i] = Float.parseFloat(splitSubInfo[1]);

@@ -4,6 +4,13 @@ import java.util.*;
 public class Main {
 
     static Scanner sc = new Scanner(System.in);
+
+   // public static void createnewArray
+
+    public static void calcLotto() {
+
+    }
+
     public static void printLotto(int lottoCount) {
         int[][] lottoArray = new int[lottoCount][6];
         int[] lottoResult = new int[6];
@@ -22,16 +29,18 @@ public class Main {
                 lottoArray[lotto][lottoIndex] = arrayList.get(randomNum);
                 arrayList.remove(randomNum);
             }
-
+//
             Arrays.sort(lottoArray[lotto]);
             for(int i:lottoArray[lotto])
                 System.out.print(i + " ");
             System.out.println();
         }
+//method 따로 빼주기        
 
         System.out.println("\n[로또 발표]");
         System.out.print("\t");
 
+        //메소드 따로 빼주기
         arrayList = new ArrayList<>();
         for(int i=1; i<=45; i++) {
             arrayList.add(i);
@@ -44,7 +53,7 @@ public class Main {
         }
 
         Arrays.sort(lottoResult);
-
+//
         for (int i : lottoResult) {
             System.out.print(i + " ");
         }
