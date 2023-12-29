@@ -25,7 +25,7 @@ public class Main {
         }
 
         for(int i=0; i<candidates.length; i++) {
-            max = Math.max(max, (int)map.get(i));
+            max = Math.max(max, map.get(i));
         }
 
         for(int i=0; i<map.size(); i++) {
@@ -38,12 +38,11 @@ public class Main {
     }
 
     public static void printResult(Map map, int count, int random, int presidentIndex) {
-        int max = Integer.MIN_VALUE;
         System.out.printf("[투표진행율]: %.2f%%, %d명 투표 ==> %s\n", (double)count/100, count, candidates[random]);
 
         for(int i=0; i<candidates.length; i++) {
             double voteRate = Double.parseDouble(String.valueOf(map.get(i)))/100;
-            System.out.printf("[기호:%d] %s: %.2f%%, (투표수: %d)\n", i,candidates[i], voteRate, (int)map.get(i));
+            System.out.printf("[기호:%d] %s: %.2f%%, (투표수: %d)\n", i,candidates[i], voteRate, map.get(i));
         }
 
         System.out.printf("[투표결과] 당선인: %s" , candidates[presidentIndex]);
