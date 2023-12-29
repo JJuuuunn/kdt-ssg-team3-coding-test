@@ -34,9 +34,7 @@ public class Main {
                 System.out.printf("%10d * %3d%% = \t%11d\n",calcYearEarn, (int)(taxRate[i]*100), (int)(calcYearEarn*taxRate[i]));
                 break;
             }
-
         }
-
 
         if(calcYearEarn>0&&yearEarn>taxStandard[taxStandard.length-1]) {
             System.out.printf("%10d * %3d%% = \t%11d\n", calcYearEarn, (int) (taxRate[taxRate.length - 1] * 100), (int) (sub * taxRate[taxRate.length - 1]));

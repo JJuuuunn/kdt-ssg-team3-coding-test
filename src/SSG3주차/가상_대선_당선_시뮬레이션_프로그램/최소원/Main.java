@@ -14,7 +14,6 @@ public class Main {
         int count = 0;
         int random=0;
         int max = Integer.MIN_VALUE;
-        double voteRate=0.0;
         int presidentIndex = 0;
 
         while(count<10000) {
@@ -29,7 +28,7 @@ public class Main {
         }
 
         for(int i=0; i<map.size(); i++) {
-            if((int)map.get(i) == max)
+            if(map.get(i) == max)
                 presidentIndex = i;
         }
 
