@@ -32,7 +32,6 @@ public class Main {
                 presidentIndex = i;
         }
 
-
         printResult(map, count, random, presidentIndex);
     }
 

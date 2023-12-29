@@ -8,9 +8,6 @@ public class Main {
         int tax = 0;
         int[] taxStandard = {0,12000000,46000000,88000000,150000000,300000000,500000000,1000000000};
         int[] deductionArray = {0,1080000,5220000,14900000,19400000,25400000,35400000,65400000};
-
-
-        //index8까지
         double[] taxRate = {0.06,0.15,0.24,0.35,0.38,0.40,0.42,0.45};
 
         System.out.println("[과세금액 계산 프로그램]");
@@ -41,6 +38,7 @@ public class Main {
             totaltax += (int)(calcYearEarn*taxRate[taxRate.length-1]);
             deduction = (int)Math.round(yearEarn*taxRate[taxRate.length-1]) - deductionArray[deductionArray.length-1];
         }
+
 
         System.out.printf("\n[세율에 의한 세금]:\t\t\t%d",totaltax);
         System.out.println();
