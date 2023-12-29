@@ -37,7 +37,6 @@ public class Main {
         }
     }
 
-
     public static void compareLotto(int lottoCount) {
         System.out.println("\n\n[내 로또 결과]");
 
