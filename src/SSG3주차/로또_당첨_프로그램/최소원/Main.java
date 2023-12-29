@@ -5,10 +5,10 @@ import java.util.*;
 public class Main {
     static Scanner sc = new Scanner(System.in);
     static Random random = new Random();
-    static ArrayList<Integer> oneLotto; // 로또 한 번 배열
+    static ArrayList<Integer> lotto; // 로또 한 개
     static ArrayList<ArrayList<Integer>> lottoArray = new ArrayList<>();    //이차원 로또 배열
     static ArrayList<Integer> arrayList;    //1-45까지의 수를 집어넣는 로또 배열 선언
-    static ArrayList<Integer> lottoResult = new ArrayList<>();  //로또 결과
+
     static int randomNum = 0;
 
     public static void inputLotto() {
@@ -18,36 +18,23 @@ public class Main {
         }
     }
 
-    public static void drawCustomerLotto(int lotto){
+    public static void drawLotto(){
 
-        oneLotto = new ArrayList<>();
+        lotto = new ArrayList<>();
 
         for(int lottoIndex = 0; lottoIndex < 6; lottoIndex++) {
             randomNum = random.nextInt(arrayList.size());
-            oneLotto.add(arrayList.get(randomNum));
+            lotto.add(arrayList.get(randomNum));
             arrayList.remove(randomNum);
         }
-        lottoArray.add(lotto,oneLotto);
-        lottoArray.get(lotto).sort(Comparator.naturalOrder());
-
-        for(int i:lottoArray.get(lotto))
-            System.out.printf("%02d ",i);
-        System.out.println();
+        Collections.sort(lotto);
+        lottoArray.add(lotto);
     }
 
-
-    public static void drawLottoResult(){
-        for(int lottoIndex = 0; lottoIndex < 6; lottoIndex++) {
-            randomNum = random.nextInt(arrayList.size());
-            lottoResult.add(arrayList.get(randomNum));
-            arrayList.remove(randomNum);
+    public static void printLotto() {
+        for(int i=0; i<6; i++) {
+            System.out.printf("%02d ",lotto.get(i));
         }
-        Collections.sort(lottoResult);
-        System.out.println("[로또 발표]");
-        System.out.println("\t");
-        for(int i:lottoResult)
-            System.out.printf("%02d ",i);
-        System.out.println();
     }
 
 
@@ -60,7 +47,7 @@ public class Main {
             for(int i: lottoArray.get(lottoRow))
                 System.out.printf("%02d ",i);
 
-            lottoArray.get(lottoRow).retainAll(lottoResult);
+            lottoArray.get(lottoRow).retainAll(lottoArray.get(lottoCount));
             System.out.println("=> " + lottoArray.get(lottoRow).size()+ "개 일치");
         }
     }
@@ -71,14 +58,21 @@ public class Main {
         System.out.print("로또 개수를 입력해 주세요.(숫자 1~10):");
         int lottoCount = sc.nextInt();
 
+        System.out.println();
         for (int lotto = 0; lotto < lottoCount; lotto++) {
             System.out.print((char) (65 + lotto) + "\t");
-            inputLotto();
-            drawCustomerLotto(lotto);
+            inputLotto();               //사용자 로또
+            drawLotto();
+            printLotto();
+            System.out.println();
         }
 
+        System.out.println("\n[로또 발표]");
+        System.out.print("\t");
         inputLotto();       //로또 생성
-        drawLottoResult();  //로또 발표
+        drawLotto();  //로또 발표
+        printLotto();
+
         compareLotto(lottoCount);   //내 로또 결과 출력
     }
 }
