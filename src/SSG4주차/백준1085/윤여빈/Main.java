@@ -9,6 +9,8 @@ public class Main {
         int y = sc.nextInt();
         int w = sc.nextInt();
         int h = sc.nextInt();
+
+        //그냥 두뇌풀가동해서 if문을 엄청 돌려주었다.... 이게 내 한계..?
         if (w-x>x && h-y>y){
             if(x>y){
                 System.out.println(y);
