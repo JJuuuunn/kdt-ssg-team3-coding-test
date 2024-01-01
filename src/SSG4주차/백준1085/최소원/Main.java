@@ -32,14 +32,21 @@ public class Main {
         int length = cardNumber.size();
 
         for(int i=0; i<length; i++) {
-            if(map.values().contains(cardNumber.get(i)))
-                cardNumber.add(1);
+            if(map.containsValue(cardNumber.get(i)))
+               cardNumber.set(i,1);
             else
-                cardNumber.add(0);
+                cardNumber.set(i,0);
         }
 
-        for(int i= length; i<cardNumber.size(); i++)
-            System.out.print(cardNumber.get(i)+" ");
+        for(int i=0; i<cardNumber.size(); i++) {
+            System.out.print(cardNumber.get(i) + " ");
+        }
+
+/*        String[] result = cardNumber.toString().replace("["," ").replace("]"," ").split(",");
+        System.out.println(Arrays.toString(result));
+*/
+        //괄호와 ,를 제외하고 한 번에 배열을 출력할 수 있는 방법을 찾아보자
+
 
     }
 
