@@ -1,9 +1,6 @@
 package SSG4주차.로또_당첨_프로그램.최소원;
-
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Random;
-import java.util.Scanner;
+import java.sql.Array;
+import java.util.*;
 
 public class Main {
     static Scanner sc = new Scanner(System.in);
@@ -39,7 +36,6 @@ public class Main {
             System.out.printf("%02d ",lotto.get(i));
         }
     }
-
 
     public static void compareLotto(int lottoCount) {
         System.out.println("\n\n[내 로또 결과]");
