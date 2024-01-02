@@ -5,6 +5,8 @@ import java.util.Collections;
 import java.util.Random;
 import java.util.Scanner;
 
+import static java.util.Collections.sort;
+
 public class Main {
     static Scanner in = new Scanner(System.in);
     static Random rd = new Random();
@@ -17,7 +19,7 @@ public class Main {
         System.out.print("로또 개수를 입력해 주세요.(숫자 1 ~10):");
 
         int amount = in.nextInt(); //로또 개수
-        ArrayList<ArrayList<Integer>> myLotto = new ArrayList<>();
+        ArrayList<ArrayList<Integer>> myLotto = new ArrayList<>(); //내가 산 로또 이차원 리스트로 생성
 
         for(int i = 0; i < amount; i++) {
             ArrayList<Integer> lottoList = new ArrayList<>();
@@ -50,7 +52,7 @@ public class Main {
             //따라서, 로또 번호 박스는 [2, 3, ... 45]가 됨
             //이렇게 하여 로또 1번은 중복해서 나올 수가 없음
         }
-        Collections.sort(lottoList);
+        sort(lottoList);
         return lottoList;
     }
 
@@ -71,7 +73,7 @@ public class Main {
             else System.out.print(",");
         }
 
-        my.retainAll(win);
+        my.retainAll(win); //발표난 로또번호와 내가산 로또 번호가 일치하는지 비교 -> retainAll을 이용해 리스트 my의 요소에 리스트 win 요소가 없다면 리스트 my에서 제거 ---> 일치하는 로또 번호만 리스트 my에 남음
         System.out.printf("=> %d개 일치\n", my.size());
     }
 

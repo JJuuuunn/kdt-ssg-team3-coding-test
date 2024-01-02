@@ -23,7 +23,7 @@ public class Main {
         }
 
         for(int i = 0; i < cardM_arr.length; i++) {
-            System.out.print(binarySearch(cardN_arr, cardM_arr[i], 0, cardN_arr.length-1) + " ");
+            System.out.print(binarySearch(cardN_arr, cardM_arr[i], 0, cardN_arr.length-1) + " "); //cardM_arr에 있는 요소 하나씩 key값으로 넣음
         }
     }
 
