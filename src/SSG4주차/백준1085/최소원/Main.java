@@ -1,61 +1,47 @@
 package SSG4주차.백준1085.최소원;
 
-import java.lang.reflect.Array;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.*;
 
 public class Main {
 
-    static Scanner sc = new Scanner(System.in);
-    static Map<Integer, Integer> map = new HashMap<>();
-    static ArrayList<Integer> cardNumber = new ArrayList<>();
+    static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+    static StringTokenizer st;
+    static int ownNum;
+    static HashSet<Integer> set = new HashSet<>();
 
-    public static void inputOwnNum() {
-        int ownNum = sc.nextInt();
+    public static void inputOwnNum()throws IOException {
 
+        ownNum = Integer.parseInt(br.readLine());
+
+        st = new StringTokenizer(br.readLine());
         for(int i=0; i<ownNum; i++) {
-            int number = sc.nextInt();
-            map.put(i,number);
+            int number = Integer.parseInt(st.nextToken());
+            set.add(number);
         }
     }
 
-    public static void cardNum() {
-        int compareCount = sc.nextInt();
+    public static void cardNum()throws IOException {
+        int compareCard = Integer.parseInt(br.readLine());
 
-        for(int compare = 0; compare<compareCount; compare++) {
-            int num = sc.nextInt();
-            cardNumber.add(num);
+        st = new StringTokenizer(br.readLine());
+
+        for(int i=0; i<compareCard; i++) {
+            int result = 0;
+            int inputNum = Integer.parseInt(st.nextToken());
+            if(set.contains(inputNum))
+                result = 1;
+            System.out.print(result+" ");
         }
     }
 
-    //public static ArrayList<Integer> compareNum(){;}
-    public static void compareNum() {
-        int length = cardNumber.size();
 
-        for(int i=0; i<length; i++) {
-            if(map.containsValue(cardNumber.get(i)))
-               cardNumber.set(i,1);
-            else
-                cardNumber.set(i,0);
-        }
-
-        for(int i=0; i<cardNumber.size(); i++) {
-            System.out.print(cardNumber.get(i) + " ");
-        }
-
-/*        String[] result = cardNumber.toString().replace("["," ").replace("]"," ").split(",");
-        System.out.println(Arrays.toString(result));
-*/
-        //괄호와 ,를 제외하고 한 번에 배열을 출력할 수 있는 방법을 찾아보자
-
-
-    }
-
-
-
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
 
         inputOwnNum();
         cardNum();
-        compareNum();
+
     }
 }
