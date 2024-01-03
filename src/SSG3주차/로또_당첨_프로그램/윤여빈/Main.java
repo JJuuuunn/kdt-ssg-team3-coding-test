@@ -35,7 +35,6 @@ public class Main {
         }
         System.out.println("[로또 발표]");
         int[] realLotto = new int[6];
-        Arrays.sort(realLotto);
         for (int i = 0; i < 6; i++) {
             Random rd = new Random();
             realLotto[i] = (rd.nextInt(45) + 1);
@@ -45,7 +44,7 @@ public class Main {
         System.out.println();
         int count = 0;
         System.out.println("[내 로또 결과]");
-        for (int i = 0; i < 6; i++) { //여기서 중첩 for문을 만들어서 두개의 배열을 비교하려고 했는데...안되넹
+        for (int i = 0; i < buy; i++) { //여기서 중첩 for문을 만들어서 두개의 배열을 비교하려고 했는데...안되넹
             int[] myLotto = list.get(i);
             for (int j = 0; j < 6; j++) {
                 if (myLotto[i] == realLotto[j]) {
