@@ -1,4 +1,4 @@
-package SSG4주차.백준1085.윤여빈;
+package SSG4주차.백준10815.윤여빈;
 
 import java.util.Scanner;
 

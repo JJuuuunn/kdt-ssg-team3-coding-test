@@ -1,4 +1,4 @@
-package SSG4주차.백준1085.양성준;
+package SSG4주차.백준10815.양성준;
 
 import java.io.*;
 import java.util.*;
