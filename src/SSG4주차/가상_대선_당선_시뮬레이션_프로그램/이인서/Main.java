@@ -11,7 +11,7 @@ public class Main { //method 분리
             voteCount[vote]++; //if문 제거
         }
     }
-    public static void printResult(String[] name, int[] voteCount){
+    public static void printResult(String[] name, int[] voteCount, int MAX_VOTE){
         String nameFinal=name[0];
         int big=voteCount[0];
         //27번 줄 big 이라는 변수 초기값을 voteCount 0번 인덱스로 초기화했는데 반복문을 0번부터 할 필요가 없어보여요
@@ -21,7 +21,7 @@ public class Main { //method 분리
                 big=voteCount[i];
                 nameFinal=name[i];
             }
-            System.out.printf("[기호:%d] %s: %.2f%%, (투표수: %d)\n", i+1, name[i],(float) voteCount[i]/100,voteCount[i]);
+            System.out.printf("[기호:%d] %s: %.2f%%, (투표수: %d)\n", i+1, name[i],(float) voteCount[i]/MAX_VOTE*100,voteCount[i]);
         }
         System.out.println("투표결과 당선인: "+nameFinal);
     }
@@ -32,7 +32,7 @@ public class Main { //method 분리
         int[] voteCount = new int[4];
 
         voting(MAX_VOTE, voteCount);
-        printResult(name, voteCount);
+        printResult(name, voteCount, MAX_VOTE);
     }
 }
 
