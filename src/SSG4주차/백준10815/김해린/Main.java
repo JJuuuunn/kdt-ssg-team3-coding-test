@@ -1,4 +1,4 @@
-package SSG4주차.백준1085.김해린;
+package SSG4주차.백준10815.김해린;
 
 import java.util.Scanner;
 

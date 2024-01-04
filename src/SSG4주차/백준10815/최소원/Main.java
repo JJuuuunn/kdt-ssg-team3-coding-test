@@ -1,4 +1,4 @@
-package SSG4주차.백준1085.최소원;
+package SSG4주차.백준10815.최소원;
 
 import java.io.BufferedReader;
 import java.io.IOException;
